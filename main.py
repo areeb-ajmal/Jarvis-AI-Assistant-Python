@@ -5,42 +5,22 @@ import musicLibrary
 import requests 
 from dotenv import load_dotenv
 import os
-import pygame
-import pyaudio
-from gtts import gTTS
+
+
+
+r = sr.Recognizer()
 
 load_dotenv()
 ai_api = os.getenv("GROQ_API_KEY")
 newapi = os.getenv("NEWS_API_KEY")
 
 
-r = sr.Recognizer()
-
-
-def speak_old(text):
+def speak(text):
     engine = pyttsx3.init()
     engine.say(text)
     engine.runAndWait()
 
-def speak(text):
-    tts = gTTS(text)
-    tts.save('temp.mp3')
-    
-    pygame.mixer.init()
-
-    # Load your MP3 file
-    pygame.mixer.music.load("temp.mp3")
-
-    # Play the MP3
-    pygame.mixer.music.play()
-
-    # Keep the program running until the music finishes
-    while pygame.mixer.music.get_busy():
-        pygame.time.Clock().tick(10)
-    
-    pygame.mixer.music.unload()
-    os.remove("temp.mp3")
-
+ 
 
 def ask_groq(prompt):
     """
@@ -137,5 +117,7 @@ if __name__ == "__main__":
 
         except Exception as e:
             print(f"Error! {e}")
+
+
 
 
