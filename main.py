@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 import os
 import pygame
 import pyaudio
+from gtts import gTTS
 
 load_dotenv()
 ai_api = os.getenv("GROQ_API_KEY")
@@ -136,4 +137,5 @@ if __name__ == "__main__":
 
         except Exception as e:
             print(f"Error! {e}")
+
 
