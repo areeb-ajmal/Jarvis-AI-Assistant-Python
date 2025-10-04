@@ -44,5 +44,5 @@ It listens to your voice, understands commands, and performs actions like:
 ---
 
 
-git clone https://github.com/YOUR_USERNAME/Jarvis-AI-Assistant-Python.git
+git clone https://github.com/areeb-ajmal/Jarvis-AI-Assistant-Python.git
 cd Jarvis-AI-Assistant-Python
